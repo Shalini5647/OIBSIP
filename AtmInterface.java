@@ -47,7 +47,7 @@ class BankAccount{
 		float amount = sc.nextFloat();
 		
 		if(accountBalance >= amount) {
-			if(amount <= 10000) {
+			if(amount <= 5000) {
 				accountBalance -= amount;
 				transactions++;
 				String str = amount + " Rs. Withdrawed.\n";
@@ -55,7 +55,7 @@ class BankAccount{
 				System.out.println("Withdraw Successful.\n");
 			}
 			else {
-				System.out.println("Limit is 10000.00.\n");
+				System.out.println("Limit is 5000.00.\n");
 			}
 		}
 		else {
@@ -67,7 +67,7 @@ class BankAccount{
 		System.out.println("Enter amount to deposit:");
 		float amount = sc.nextFloat();
 		
-		if(amount <= 10000f) {
+		if(amount <= 5000f) {
 			accountBalance += amount;
 			transactions++;
 			String str = amount + " Rs. Deposited.\n";
@@ -75,7 +75,7 @@ class BankAccount{
 			System.out.println("Successfully Deposited.\n");
 		}
 		else {
-			System.out.println("Limit is 10000.00.\n");
+			System.out.println("Limit is 5000.00.\n");
 		}
 	}
 	
@@ -88,7 +88,7 @@ class BankAccount{
 		float amount = sc.nextFloat();
 		
 		if(accountBalance >= amount) {
-			if(amount <= 15000f) {
+			if(amount <= 10000f) {
 				System.out.println("\nAmount transfered Successfully.\n");
 				accountBalance -= amount;
 				transactions++;
@@ -96,7 +96,7 @@ class BankAccount{
 				transactionHistory = transactionHistory.concat(str);		
 		    }
 			else {
-				System.out.println("Limit is 15000.00.\n");
+				System.out.println("Limit is 10000.00.\n");
 			}
 		}
 		else {
@@ -123,7 +123,8 @@ public class AtmInterface {
 		if(isValid) {
 			boolean flag = false;
 		    while(!flag) {
-		    	System.out.println("Enter your choice");
+
+			        System.out.println("Enter your choice: ");
 				System.out.println("1.Transactions History\n2.Withdraw\n3.Deposit\n4.Transfer\n5.Check Balance\n6.Exit\n");
 				int choice = sc.nextInt();
 				
@@ -143,6 +144,7 @@ public class AtmInterface {
 					case 5:
 						a.checkBalance();
 						break;
+						
 					case 6:
 						flag = true;
 						System.out.println("\nThankyou for visiting!!!");
